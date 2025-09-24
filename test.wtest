@@ -9,3 +9,18 @@ describe "test fulbito" {
     assert.equals(pelota.position(), game.at(0, 5))
   }
 }
+
+describe "patear"{
+    test"patear"{
+        lionel.position(pelota.position())
+        lionel.patear()
+        lionel.position(pelota.position())
+        lionel.patear()
+        lionel.position(pelota.position())
+        lionel.patear()
+        lionel.position(pelota.position())
+        lionel.patear()
+        assert.equals(game.width()-1, pelota.position().x())
+    }
+
+}

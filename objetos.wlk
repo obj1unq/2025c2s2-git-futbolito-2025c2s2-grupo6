@@ -17,16 +17,22 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
-	method validaciónPosiciónPelota() {
-	  return(self.position() == pelota.position())
-	}
-
 	method taquito() {
-	  self.validaciónPosiciónPelota()
+	  self.validarSiPuedePatear()
 	  pelota.position(game.at((pelota.position().x()-2).max(0), pelota.position().y()))
 	}
 
+	method patear() {
+		self.validarSiPuedePatear()
+		pelota.position(game.at((pelota.position().x()+3).min(game.width()-1), pelota.position().y()))
 
+
+	}
+	method validarSiPuedePatear() {
+	  if(!(position == pelota.position())){
+		self.error("lionel no esta cerca de la pelota")
+	  }
+	}
 
 }
 
