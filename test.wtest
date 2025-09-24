@@ -1,4 +1,14 @@
 import objetos.*
+describe "test fulbito" {
+  test "taquito" {
+    lionel.taquito()
+    lionel.position(pelota.position())
+    lionel.taquito()
+    lionel.position(pelota.position())
+    lionel.taquito()
+    assert.equals(pelota.position(), game.at(0, 5))
+  }
+}
 
 describe "patear"{
     test"patear"{
@@ -12,4 +22,5 @@ describe "patear"{
         lionel.patear()
         assert.equals(game.width()-1, pelota.position().x())
     }
+
 }

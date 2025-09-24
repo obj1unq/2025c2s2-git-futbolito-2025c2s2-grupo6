@@ -16,6 +16,12 @@ object lionel {
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
+	
+	method taquito() {
+	  self.validarSiPuedePatear()
+	  pelota.position(game.at((pelota.position().x()-2).max(0), pelota.position().y()))
+	}
+
 	method patear() {
 		self.validarSiPuedePatear()
 		pelota.position(game.at((pelota.position().x()+3).min(game.width()-1), pelota.position().y()))
@@ -23,10 +29,11 @@ object lionel {
 
 	}
 	method validarSiPuedePatear() {
-	  if(!(position == pelota.position())){//&& pelota.position().x()+3 < game.width()-1){
+	  if(!(position == pelota.position())){
 		self.error("lionel no esta cerca de la pelota")
 	  }
 	}
+
 }
 
 
