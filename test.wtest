@@ -1,0 +1,11 @@
+import objetos.*
+describe "test fulbito" {
+  test "taquito" {
+    lionel.taquito()
+    lionel.position(pelota.position())
+    lionel.taquito()
+    lionel.position(pelota.position())
+    lionel.taquito()
+    assert.equals(pelota.position(), game.at(0, 5))
+  }
+}

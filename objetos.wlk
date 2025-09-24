@@ -17,6 +17,17 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
+	method validaciónPosiciónPelota() {
+	  return(self.position() == pelota.position())
+	}
+
+	method taquito() {
+	  self.validaciónPosiciónPelota()
+	  pelota.position(game.at((pelota.position().x()-2).max(0), pelota.position().y()))
+	}
+
+
+
 }
 
 
