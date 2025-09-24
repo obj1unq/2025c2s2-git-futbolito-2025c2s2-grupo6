@@ -16,7 +16,17 @@ object lionel {
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
-	
+	method patear() {
+		self.validarSiPuedePatear()
+		pelota.position(game.at((pelota.position().x()+3).min(game.width()-1), pelota.position().y()))
+
+
+	}
+	method validarSiPuedePatear() {
+	  if(!(position == pelota.position())){//&& pelota.position().x()+3 < game.width()-1){
+		self.error("lionel no esta cerca de la pelota")
+	  }
+	}
 }
 
 
